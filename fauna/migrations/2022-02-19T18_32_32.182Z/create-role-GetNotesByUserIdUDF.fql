@@ -1,0 +1,14 @@
+CreateRole({
+  "name": "GetNotesByUserIdUDF",
+  "privileges": [{
+    "resource": Index("NotesByUserId"),
+    "actions": {
+      "read": true
+    }
+  }, {
+    "resource": Collection("Notes"),
+    "actions": {
+      "read": true
+    }
+  }]
+})

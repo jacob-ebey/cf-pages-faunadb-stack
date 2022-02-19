@@ -1,0 +1,12 @@
+CreateRole({
+  name: "DeleteNoteUDF",
+  privileges: [
+    {
+      resource: Collection("Notes"),
+      actions: {
+        read: true,
+        delete: true
+      }
+    }
+  ]
+})

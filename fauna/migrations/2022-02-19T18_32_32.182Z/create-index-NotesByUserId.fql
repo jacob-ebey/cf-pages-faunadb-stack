@@ -1,0 +1,8 @@
+CreateIndex({
+  "name": "NotesByUserId",
+  "serialized": true,
+  "source": Collection("Notes"),
+  "terms": [{
+    "field": ["data", "userId"]
+  }]
+})

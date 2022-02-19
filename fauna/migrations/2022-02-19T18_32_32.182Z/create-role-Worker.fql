@@ -1,0 +1,29 @@
+CreateRole({
+  "name": "Worker",
+  "privileges": [{
+    "resource": Function("CreateUser"),
+    "actions": {
+      "call": true
+    }
+  }, {
+    "resource": Function("LoginUser"),
+    "actions": {
+      "call": true
+    }
+  }, {
+    "resource": Function("CreateNote"),
+    "actions": {
+      "call": true
+    }
+  }, {
+    "resource": Function("GetNotesByUserId"),
+    "actions": {
+      "call": true
+    }
+  }, {
+    "resource": Function("DeleteNote"),
+    "actions": {
+      "call": true
+    }
+  }]
+})

@@ -1,0 +1,7 @@
+CreateFunction({
+  "name": "DeleteNote",
+  "body": Query(Lambda(["id", "userId"], Let([{
+    "note": Get(Ref(Collection("Notes"), Var("id")))
+  }], If(Equals(Select("userId", Select("data", Var("note"))), Var("userId")), Delete(Ref(Collection("Notes"), Var("id"))), false)))),
+  "role": Role("DeleteNoteUDF")
+})

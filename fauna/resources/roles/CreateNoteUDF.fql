@@ -1,0 +1,11 @@
+CreateRole({
+  name: "CreateNoteUDF",
+  privileges: [
+    {
+      resource: Collection("Notes"),
+      actions: {
+        create: true
+      }
+    }
+  ]
+})

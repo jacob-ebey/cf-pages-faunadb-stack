@@ -1,0 +1,17 @@
+CreateFunction({
+  name: "CreateNote",
+  body: Query(Lambda(
+    ["title", "body", "userId"],
+    Create(
+      Collection('Notes'),
+      {
+        data: {
+          title: Var("title"),
+          body: Var("body"),
+          userId: Var("userId")
+        }
+      }
+    )
+  )),
+  role: Role("CreateNoteUDF")
+})
