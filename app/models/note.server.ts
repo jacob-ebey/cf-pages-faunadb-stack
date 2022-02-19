@@ -44,9 +44,7 @@ async function createNote(
 }
 
 async function deleteNote(client: Client, id: string, userId: string) {
-  const result = await client.query(q.Call("DeleteNote", [id, userId]));
-  console.log(result);
-  return null;
+  await client.query(q.Call("DeleteNote", [id, userId]));
 }
 
 export { createNote, deleteNote, getNotesForUser };

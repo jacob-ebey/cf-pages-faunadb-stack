@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Links,
   LiveReload,
@@ -5,16 +6,32 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useTransition,
 } from "remix";
 import type { LinksFunction } from "remix";
+import NProgress from "nprogress";
+import nProgressStyles from "nprogress/nprogress.css";
 
 import appStyles from "./styles/app.css";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: appStyles }];
+  return [
+    { rel: "stylesheet", href: appStyles },
+    { rel: "stylesheet", href: nProgressStyles },
+  ];
 };
 
 export default function App() {
+  const transition = useTransition();
+
+  useEffect(() => {
+    // when the state is idle then we can to complete the progress bar
+    if (transition.state === "idle") NProgress.done();
+    // and when it's something else it means it's either submitting a form or
+    // waiting for the loaders of the next location so we start it
+    else NProgress.start();
+  }, [transition.state]);
+
   return (
     <html lang="en">
       <head>
