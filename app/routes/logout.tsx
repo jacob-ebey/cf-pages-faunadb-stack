@@ -1,4 +1,4 @@
-import { redirect } from "remix";
+import { redirect } from "@remix-run/cloudflare";
 import type { ActionFunction, LoaderFunction } from "~/context";
 import { logout } from "~/session.server";
 

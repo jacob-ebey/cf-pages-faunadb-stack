@@ -1,14 +1,6 @@
 import { useEffect } from "react";
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useTransition,
-} from "remix";
-import type { LinksFunction } from "remix";
+import type { LinksFunction } from "@remix-run/cloudflare";
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useTransition } from "@remix-run/react";
 import NProgress from "nprogress";
 import nProgressStyles from "nprogress/nprogress.css";
 
