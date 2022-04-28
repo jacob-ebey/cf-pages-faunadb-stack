@@ -1,4 +1,4 @@
-import { SessionStorage } from "remix";
+import { SessionStorage } from "@remix-run/cloudflare";
 import type { DataFunctionArgs } from "@remix-run/server-runtime";
 import type { Client } from "faunadb";
 

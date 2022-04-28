@@ -1,13 +1,7 @@
 import * as React from "react";
-import {
-  Form,
-  json,
-  redirect,
-  useLoaderData,
-  useLocation,
-  useActionData,
-} from "remix";
-import type { MetaFunction } from "remix";
+import type { MetaFunction } from "@remix-run/cloudflare";
+import { json, redirect } from "@remix-run/cloudflare";
+import { Form, useActionData, useLoaderData, useLocation } from "@remix-run/react";
 import Alert from "@reach/alert";
 
 import type { ActionFunction, LoaderFunction } from "~/context";
